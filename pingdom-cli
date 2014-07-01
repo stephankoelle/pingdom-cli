@@ -101,7 +101,7 @@ def get_credits():
 def list_check_names():
     checks = pingdom_api_call("checks", "GET")
     for check in checks['checks']:
-        print check['name']
+        print str(check['id']) + ";" + check['name'] + ";" + check['hostname']
 
 
 def list_sites():

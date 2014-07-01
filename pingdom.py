@@ -71,6 +71,11 @@ class Pingdom(object):
         resp = self.method('checks')
         checks = [check for check in resp['checks'] if check['name'] == name]
         return checks
+
+    def check_by_hostname(self, name):
+        resp = self.method('checks')
+        checks = [check for check in resp['checks'] if check['hostname'] == hostname]
+        return checks
         
     def check_status(self, name):
         checks = self.check_by_name(name)
